@@ -62,7 +62,7 @@
               }
             }
             input {
-              @include buttonRegular(#494343, 13vw, 55px);
+              @include buttonRegular(#494343, 13vw, 45px);
               color: #fff;
               position: absolute;
               // pointer-events: none;
@@ -140,6 +140,11 @@
               .fileBtnS {
                 width: 55vw;
                 max-width: 300px;
+              }
+              input {
+                width: 55vw;
+                max-width: 300px;
+                opacity: 0;
               }
             }
           }
@@ -240,7 +245,7 @@
               }
             }
             input {
-              @include buttonRegular(#494343, 13vw, 55px);
+              @include buttonRegular(#494343, 13vw, 45px);
               color: #fff;
               position: absolute;
               cursor: pointer;
@@ -318,6 +323,11 @@
                 width: 55vw;
                 max-width: 300px;
               }
+              input {
+                width: 55vw;
+                max-width: 300px;
+                opacity: 0;
+              }
             }
           }
           .sg-btn {
@@ -347,7 +357,7 @@
         }
       }
       .sg-body {
-        margin: 2em 0;
+        margin: 2em 0 0 0;
       }
     }
   }
