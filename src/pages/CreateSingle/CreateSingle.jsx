@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect, useRef } from 'react'
 import { ModeContext } from '../../context/ModeContext'
 import { Link } from 'react-router-dom'
 import Nav from '../../components/Nav/Nav'
@@ -6,9 +6,10 @@ import TextInput from '../../components/TextInput/TextInput'
 
 import arrow from '../../images/icons/arrow.svg'
 import arrow2 from '../../images/icons/arr-white.svg'
-import nft from '../../images/others/nft.png'
+//import nft from '../../images/others/nft.png'
 
 import './CreateSingle.scss'
+import Footer from '../../components/Footer/Footer'
 
 const CreateSingle = () => {
   const [modeState] = useContext(ModeContext)
@@ -20,12 +21,26 @@ const CreateSingle = () => {
     title: '',
     description: '',
   })
+  const [file, setFile] = useState('')
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const inputHandler = (event) => {
     setUserInput({
       ...userInput,
       [event.target.name]: event.target.value,
     })
   }
+  const fileBox = useRef()
+  // const handleFile = (e) => {
+  //   setFile(e.target.files[0])
+  //   // fileBox.classList.add('b-outline')
+  //   const fB = document.getElementById('fB')
+  //   fB.classList.toggle('b-outline')
+  //   fB.onclick = function () {
+  //     fB.classList.toggle('b-outline')
+  //   }
+  // }
   return (
     <div>
       <Nav />
@@ -47,9 +62,16 @@ const CreateSingle = () => {
             <div className="sg-form">
               <div className="fileBox">
                 <p>UPLOAD FILE</p>
-                <div className="fileBoxContent">
-                  <p>JPG, GIF, WEBP, MP4 . MAX ...MB</p>
-                  <input type="file" />
+                <div className="fileBoxContent" id="fB">
+                  <p>JPG, GIF, WEBP, MAX 64MB</p>
+                  <div className="fileBtnS" ref={fileBox}>
+                    <p>CHOOSE FILE</p>
+                  </div>
+                  <input
+                    type="file"
+                    accept=".png, .jpeg, .jpg, .gif, .webp"
+                    onChange={(e) => setFile(e.target.files[0])}
+                  />
                 </div>
               </div>
               <div className="inputBox">
@@ -101,13 +123,18 @@ const CreateSingle = () => {
                 <button>Create NFT</button>
               </div>
             </div>
+
             <div className="sg-imgBox">
               <p>PREVIEW</p>
-              <img src={nft} alt="nft" />
+              {/* <img src={nft} alt="nft" /> */}
+              <div className="fileContainer">
+                {file && <img src={URL.createObjectURL(file)} alt="file" />}
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }

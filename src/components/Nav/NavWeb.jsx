@@ -43,9 +43,9 @@ const NavWeb = () => {
         </div>
         <nav className="navCenter">
           <ul className="nav-links">
-            <li>Marketplace</li>
-            <li>Resources</li>
-            <li>Profile</li>
+            <li className="hvr-u-left">Marketplace</li>
+            <li className="hvr-u-left">Resources</li>
+            <li className="hvr-u-left">Profile</li>
           </ul>
         </nav>
         <nav className="navRight">

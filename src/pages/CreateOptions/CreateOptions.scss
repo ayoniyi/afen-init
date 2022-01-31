@@ -6,6 +6,7 @@
   background: #fff;
   transition: 0.2s ease-in;
   padding-top: 2em;
+  min-height: 100vh;
   .optionsContent {
     @include flexRegular(row, flex-start);
     .optionsImg {

@@ -3,6 +3,7 @@ import { ModeContext } from '../../context/ModeContext'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Nav from '../../components/Nav/Nav'
+import Footer from '../../components/Footer/Footer'
 import AImg from '../../images/utils/back.png'
 //import arrow from '../../images/utils/arrow.svg'
 import Single from '../../images/others/single.svg'
@@ -24,6 +25,9 @@ const CreateOptions = () => {
     }
     show()
   }, [option])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const [modeState] = useContext(ModeContext)
   const dark = modeState.dark
   return (
@@ -97,6 +101,7 @@ const CreateOptions = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }

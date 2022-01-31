@@ -24,6 +24,7 @@
     }
     .sg-body {
       @include flexRegular(row, flex-start);
+      align-items: flex-start;
       margin: 4em 0;
       padding-bottom: 4em;
       .sg-form {
@@ -31,12 +32,12 @@
         // background: lavender;
         .fileBox {
           margin-bottom: 2em;
-
           p {
             font-size: 12px;
             margin-bottom: 10px;
           }
           .fileBoxContent {
+            position: relative;
             @include flexRegular(column, center);
             transition: 0.2s ease-in;
             outline: none;
@@ -47,9 +48,26 @@
             // border-style: dashed;
             border: 2px dashed #494343;
             border-radius: 10px;
+            .fileBtnS {
+              @include buttonRegular(#494343, 13vw, 45px);
+              @include flexRegular(column, center);
+              align-items: center;
+              justify-content: center;
+              padding: 0.3em 0;
+              color: #fff;
+              transition: 0.2s ease-in;
+              cursor: pointer;
+              p {
+                margin-top: 10px;
+              }
+            }
             input {
               @include buttonRegular(#494343, 13vw, 55px);
               color: #fff;
+              position: absolute;
+              // pointer-events: none;
+              cursor: pointer;
+              opacity: 0;
             }
           }
         }
@@ -73,17 +91,23 @@
       }
       .sg-imgBox {
         width: 45%;
-        padding-left: 2em;
+        padding-left: 4em;
         @include flexRegular(column, flex-start);
         align-items: flex-start;
-        // background: lavender;
         p {
           font-size: 12px;
           margin-bottom: 10px;
         }
-        img {
-          display: block;
+        .fileContainer {
+          border: 1px dashed #494343;
+          height: 80vh;
           width: 100%;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
     }
@@ -113,6 +137,10 @@
             .fileBoxContent {
               width: 90vw;
               max-width: 900px;
+              .fileBtnS {
+                width: 55vw;
+                max-width: 300px;
+              }
             }
           }
           .sg-btn {
@@ -120,6 +148,7 @@
             button {
               width: 90vw;
               max-width: 900px;
+              color: black;
             }
           }
         }
@@ -172,14 +201,14 @@
     }
     .sg-body {
       @include flexRegular(row, flex-start);
-      margin: 4em 0;
-      padding-bottom: 4em;
+      align-items: flex-start;
+      margin: 4em 0 0 0;
+      padding-bottom: 8em;
       .sg-form {
         width: 55%;
         // background: lavender;
         .fileBox {
           margin-bottom: 2em;
-
           p {
             font-size: 12px;
             margin-bottom: 10px;
@@ -197,9 +226,25 @@
             // border-style: dashed;
             border: 2px dashed #fff;
             border-radius: 10px;
+            .fileBtnS {
+              @include buttonRegular(#494343, 13vw, 45px);
+              @include flexRegular(column, center);
+              align-items: center;
+              justify-content: center;
+              padding: 0.3em 0;
+              color: #fff;
+              transition: 0.2s ease-in;
+
+              p {
+                margin-top: 10px;
+              }
+            }
             input {
               @include buttonRegular(#494343, 13vw, 55px);
               color: #fff;
+              position: absolute;
+              cursor: pointer;
+              opacity: 0;
             }
           }
         }
@@ -223,17 +268,23 @@
       }
       .sg-imgBox {
         width: 45%;
-        padding-left: 2em;
+        padding-left: 4em;
         @include flexRegular(column, flex-start);
         align-items: flex-start;
-        // background: lavender;
         p {
           font-size: 12px;
           margin-bottom: 10px;
         }
-        img {
-          display: block;
+        .fileContainer {
+          // border: 1px dashed #fff;
+          height: 80vh;
           width: 100%;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
     }
@@ -263,6 +314,10 @@
             .fileBoxContent {
               width: 90vw;
               max-width: 900px;
+              .fileBtnS {
+                width: 55vw;
+                max-width: 300px;
+              }
             }
           }
           .sg-btn {
@@ -296,4 +351,8 @@
       }
     }
   }
+}
+
+.b-outline {
+  border: 2px solid $yellowMain !important;
 }
