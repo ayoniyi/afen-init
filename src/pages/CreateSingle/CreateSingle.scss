@@ -1,0 +1,239 @@
+@import '../../variables';
+@import '../../mixins';
+
+.singleSec-light {
+  background: #fff;
+  transition: 0.2s ease-in;
+  padding-top: 6em;
+  .singleContent {
+    width: 80%;
+    margin: 3em auto 0 auto;
+    .sg-top {
+      cursor: pointer;
+      .backBox {
+        @include flexRegular(row, flex-start);
+        img {
+          margin-right: 0.5em;
+        }
+      }
+      h1 {
+        margin-top: 0.7em;
+        font-size: 35px;
+        font-weight: 700;
+      }
+    }
+    .sg-body {
+      @include flexRegular(row, flex-start);
+      margin: 4em 0;
+      padding-bottom: 4em;
+      .sg-form {
+        width: 55%;
+        // background: lavender;
+        .fileBox {
+          margin-bottom: 2em;
+
+          p {
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+          .fileBoxContent {
+            @include flexRegular(column, center);
+            transition: 0.2s ease-in;
+            outline: none;
+            width: 43vw;
+            max-width: 590px;
+            height: 170px;
+            padding: 1em;
+            // border-style: dashed;
+            border: 2px dashed #494343;
+            border-radius: 10px;
+            input {
+              @include buttonRegular(#494343, 13vw, 55px);
+              color: #fff;
+            }
+          }
+        }
+        .inputBox {
+          margin: 1em 0;
+          p {
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+        }
+        .sg-btn {
+          margin-top: 2em;
+          button {
+            @include buttonRegular($yellowMain, 43vw, 55px);
+            max-width: 590px;
+            &:hover {
+              background: $yellowDark;
+            }
+          }
+        }
+      }
+      .sg-imgBox {
+        width: 45%;
+        padding-left: 2em;
+        @include flexRegular(column, flex-start);
+        align-items: flex-start;
+        // background: lavender;
+        p {
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .singleSec-light {
+    .singleContent {
+      width: 95%;
+    }
+  }
+}
+@media (max-width: 820px) {
+  .singleSec-light {
+    .singleContent {
+      .sg-body {
+        @include flexRegular(column, flex-start);
+        .sg-form,
+        .sg-imgBox {
+          width: 98%;
+          margin-bottom: 2em;
+        }
+        .sg-form {
+          .fileBox {
+            .fileBoxContent {
+              width: 90vw;
+              max-width: 900px;
+            }
+          }
+          .sg-btn {
+            margin-top: 2em;
+            button {
+              width: 90vw;
+              max-width: 900px;
+            }
+          }
+        }
+        .sg-imgBox {
+          margin-top: 3em;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .singleSec-light {
+    padding-top: 0;
+    .singleContent {
+      .sg-top {
+        h1 {
+          font-size: 28px;
+        }
+      }
+      .sg-body {
+        margin: 2em 0;
+      }
+    }
+  }
+}
+
+.singleSec-dark {
+  background: $blueMain;
+  color: #fff;
+  transition: 0.2s ease-in;
+  padding-top: 6em;
+  .singleContent {
+    width: 80%;
+    margin: 3em auto 0 auto;
+    .sg-top {
+      cursor: pointer;
+      .backBox {
+        @include flexRegular(row, flex-start);
+        img {
+          margin-right: 0.5em;
+        }
+      }
+      h1 {
+        margin-top: 0.7em;
+        font-size: 35px;
+        font-weight: 700;
+        color: $yellowMain;
+      }
+    }
+    .sg-body {
+      @include flexRegular(row, flex-start);
+      margin: 4em 0;
+      padding-bottom: 4em;
+      .sg-form {
+        width: 55%;
+        // background: lavender;
+        .fileBox {
+          margin-bottom: 2em;
+
+          p {
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+          .fileBoxContent {
+            background: #fff;
+            color: black;
+            @include flexRegular(column, center);
+            transition: 0.2s ease-in;
+            outline: none;
+            width: 43vw;
+            max-width: 590px;
+            height: 170px;
+            padding: 1em;
+            // border-style: dashed;
+            border: 2px dashed #fff;
+            border-radius: 10px;
+            input {
+              @include buttonRegular(#494343, 13vw, 55px);
+              color: #fff;
+            }
+          }
+        }
+        .inputBox {
+          margin: 1em 0;
+          p {
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+        }
+        .sg-btn {
+          margin-top: 2em;
+          button {
+            @include buttonRegular($yellowMain, 43vw, 55px);
+            max-width: 590px;
+            &:hover {
+              background: $yellowDark;
+            }
+          }
+        }
+      }
+      .sg-imgBox {
+        width: 45%;
+        padding-left: 2em;
+        @include flexRegular(column, flex-start);
+        align-items: flex-start;
+        // background: lavender;
+        p {
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

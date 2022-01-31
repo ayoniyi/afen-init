@@ -1,0 +1,35 @@
+@import '../../variables';
+.textInput {
+  input {
+    transition: 0.2s ease-in;
+    outline: none;
+    width: 43vw;
+    max-width: 590px;
+    height: 55px;
+    border-style: dashed;
+    border-radius: 10px;
+    padding-left: 1em;
+    &:focus {
+      border: 2px solid $yellowMain;
+    }
+  }
+  .inp-dark {
+    background: #fff;
+    border: none;
+  }
+}
+@media (max-width: 840px) {
+  .textInput {
+    input {
+      width: 90vw;
+      max-width: 900px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .textInput {
+    input {
+      font-size: 15px;
+    }
+  }
+}
